@@ -14,6 +14,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -26,7 +28,7 @@
                 <div class="todosection mt-5">
                     <div class="container">
                         <ul class="list-group d-flex justify-content-center">
-                            <li class="list-group-item" v-for="todo in listTodo">{{ todo.text }}</li>
+                            <li class="list-group-item d-flex justify-content-between" v-for="(todo , indice )  in listTodo" :class="todo.done == false ? 'todo-done-false' : ' '">{{ todo.text }} <i class="fa-solid fa-trash"></i></li>
                         </ul>
                     </div>
                 </div>

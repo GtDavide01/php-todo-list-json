@@ -11,7 +11,7 @@ createApp({
   created() {
     axios.get("server.php").then((resp) => {
       this.listTodo = resp.data;
-      console.log(this.listTodo);
+      console.log(this.listTodo[0].text);
     });
   },
   methods: {
