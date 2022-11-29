@@ -16,12 +16,17 @@ createApp({
   },
   methods: {
     addTask() {
-      this.listTodo.push({
-        text: this.newTask,
-        done: false,
-      });
-      console.log(this.listTodo);
-      this.newTask = "";
+      const data = {
+        newTask: this.newTask,
+      };
+      axios
+        .post("server.php", data, {
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+        .then((resp) => {
+          this.listTodo = resp.data;
+          this.newTask = "";
+        });
     },
   },
 }).mount("#app");

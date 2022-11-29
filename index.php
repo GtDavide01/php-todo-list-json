@@ -32,7 +32,7 @@
                 </div>
                 <div class="sectionsubmit mt-5">
                     <div class="container">
-                        <input class="form-control" type="text" v-model="newTask" placeholder="Add a new Task ">
+                        <input class="form-control" type="text" name="newTask" v-model="newTask" placeholder="Add a new Task ">
                         <button class="btn btn-info mt-5" @click="addTask">Aggiungi</button>
                     </div>
                 </div>
