@@ -28,7 +28,7 @@
                 <div class="todosection mt-5">
                     <div class="container">
                         <ul class="list-group d-flex justify-content-center">
-                            <li class="list-group-item d-flex justify-content-between" v-for="(todo , indice )  in listTodo" :class="todo.done == false ? 'todo-done-false' : ' '">{{ todo.text }} <i class="fa-solid fa-trash"></i></li>
+                            <li @click="changeDone(indice)" class="list-group-item d-flex justify-content-between" v-for="(todo , indice )  in listTodo" :id="todo.done === false ? 'todo-done-false' : ' '">{{ todo.text}} <i class="fa-solid fa-trash"></i></li>
                         </ul>
                     </div>
                 </div>

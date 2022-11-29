@@ -11,10 +11,13 @@ createApp({
   created() {
     axios.get("server.php").then((resp) => {
       this.listTodo = resp.data;
-      console.log(this.listTodo[0].text);
+      console.log(this.listTodo);
     });
   },
   methods: {
+    changeDone(index) {
+      this.listTodo[index].done = !this.listTodo[index].done;
+    },
     addTask() {
       const data = {
         newTask: this.newTask,
